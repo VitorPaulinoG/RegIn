@@ -56,4 +56,11 @@ public static class RegIn
     
     public static string Range(this string source, string pattern, uint min, uint? max = null)
         => Grouping(source, pattern).Range(min, max);
+    
+    public static string Repeat(this string source, uint count)
+        => source + "{" + count + "}";
+
+    public static string Repeat(this string source, string pattern, uint count)
+        => Grouping(source, pattern).Repeat(count);
+
 }
