@@ -20,5 +20,10 @@ public static class RegIn
         
         return source + result;
     }
+
+    public static string Optional(this string source) => source + "?";
+
+    // public static string Optional(this string source, string optionalGroup) 
+    
     
 }
