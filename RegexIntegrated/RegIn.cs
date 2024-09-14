@@ -40,4 +40,10 @@ public static class RegIn
 
     public static string Star(this string source, string pattern)
         => Grouping(source, pattern).Star();
+
+    public static string Many(this string source)
+        => source + "+";
+
+    public static string Many(this string source, string pattern)
+        => Grouping(source, pattern).Many();
 }
