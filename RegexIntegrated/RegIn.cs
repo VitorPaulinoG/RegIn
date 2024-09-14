@@ -46,4 +46,14 @@ public static class RegIn
 
     public static string Many(this string source, string pattern)
         => Grouping(source, pattern).Many();
+
+    public static string Range(this string source, uint min, uint? max = null)
+    {
+        if (max == null)
+            return source + "{" + min + ",}";
+        return source + "{" + min + "," + max + "}";
+    }
+    
+    public static string Range(this string source, string pattern, uint min, uint? max = null)
+        => Grouping(source, pattern).Range(min, max);
 }
