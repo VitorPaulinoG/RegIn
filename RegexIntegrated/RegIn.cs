@@ -24,6 +24,11 @@ public static class RegIn
     public static string Optional(this string source) => source + "?";
 
     // public static string Optional(this string source, string optionalGroup) 
-    
-    
+
+    public static string Grouping(this string source, string pattern)
+    {
+        string result = "(" + pattern + ")";
+        
+        return source + result;
+    }
 }
