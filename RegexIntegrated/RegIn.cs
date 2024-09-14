@@ -27,9 +27,7 @@ public static class RegIn
     public static string Optional(this string source) => source + "?";
 
     public static string Optional(this string source, string optionalPattern)
-    {
-        return Grouping(source, optionalPattern).Optional();
-    }
+        => Grouping(source, optionalPattern).Optional();
 
     public static string Grouping(this string source, string pattern)
     {
@@ -37,4 +35,9 @@ public static class RegIn
         
         return source + result;
     }
+
+    public static string Star(this string source) => source + "*";
+
+    public static string Star(this string source, string pattern)
+        => Grouping(source, pattern).Star();
 }
