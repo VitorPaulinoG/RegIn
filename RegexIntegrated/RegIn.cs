@@ -23,7 +23,10 @@ public static class RegIn
 
     public static string Optional(this string source) => source + "?";
 
-    // public static string Optional(this string source, string optionalGroup) 
+    public static string Optional(this string source, string optionalPattern)
+    {
+        return Grouping(source, optionalPattern).Optional();
+    }
 
     public static string Grouping(this string source, string pattern)
     {
