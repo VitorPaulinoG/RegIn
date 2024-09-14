@@ -5,9 +5,8 @@ namespace RegexIntegrated;
 public static class RegIn
 {
     public static string AnyChar(this string source)
-    {
-        return source + ".";
-    }
+        => source + ".";
+    
 
     public static string AllowedChars(this string source, params char[] chars)
     {
