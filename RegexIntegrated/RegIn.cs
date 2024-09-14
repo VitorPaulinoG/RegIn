@@ -7,7 +7,7 @@ public static class RegIn
     public static string AnyChar(this string source)
         => source + ".";
 
-    public static string AnyCharsAround(this string source, string pattern) 
+    public static string AnyCharAround(this string source, string pattern) 
         => AnyChar(source) + pattern + AnyChar(source);
     
     public static string AllowedChars(this string source, params char[] chars)
