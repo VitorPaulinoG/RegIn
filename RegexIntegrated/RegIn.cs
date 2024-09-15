@@ -97,4 +97,10 @@ public static class RegIn
 
     public static string ExactPhrase(this string source, string phrase)
         => source + Regex.Escape(phrase);
+
+    public static string Or(this string source, string firstPattern, string secondPattern)
+    {
+        string result = firstPattern + "|" + secondPattern;
+        return Grouping(source, result);
+    }
 }
