@@ -74,4 +74,19 @@ public static class RegIn
 
     public static string End(this string source, string pattern)
         => source + pattern.End();
+
+    private static string BorderStart(this string source)
+        => @"\b" + source;
+
+    public static string BorderStart(this string source, string pattern)
+        => Grouping(source, pattern).BorderStart();
+
+    private static string BorderEnd(this string source)
+        => source + @"\b";
+
+    public static string BorderEnd(this string source, string pattern)
+        => Grouping(source, pattern).BorderEnd();
+
+    private static string BorderAround(this string source, string pattern)
+        => Grouping(source, pattern).BorderStart().BorderEnd();
 }
