@@ -89,4 +89,12 @@ public static class RegIn
 
     private static string BorderAround(this string source, string pattern)
         => Grouping(source, pattern).BorderStart().BorderEnd();
+
+    private static string Escape(this string source)
+        => source + @"\";
+    public static string Escape(this string source, char character)
+        => source.Escape() + character.ToString();
+
+    public static string ExactPhrase(this string source, string phrase)
+        => Regex.Escape(phrase);
 }
