@@ -68,4 +68,10 @@ public static class RegIn
 
     public static string Start(this string source, string pattern)
         => pattern.Start() + source;
+    
+    private static string End(this string source)
+        => source + "$";
+
+    public static string End(this string source, string pattern)
+        => source + pattern.End();
 }
