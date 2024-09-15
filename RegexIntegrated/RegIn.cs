@@ -63,9 +63,9 @@ public static class RegIn
     public static string Repeat(this string source, string pattern, uint count)
         => Grouping(source, pattern).Repeat(count);
 
-    private static string StartWith(this string source)
+    private static string Start(this string source)
         => "^" + source;
 
-    public static string StartWith(this string source, string pattern)
-        => pattern.StartWith() + source;
+    public static string Start(this string source, string pattern)
+        => pattern.Start() + source;
 }
