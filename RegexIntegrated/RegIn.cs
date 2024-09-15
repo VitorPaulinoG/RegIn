@@ -29,6 +29,9 @@ public static class RegIn
     public static string Optional(this string source, string optionalPattern)
         => Grouping(source, optionalPattern).Optional();
 
+    public static string NonGreedyOptional(this string source, string optionalPattern)
+        => Optional(source, optionalPattern).Optional();
+
     public static string Grouping(this string source, string pattern)
     {
         string result = "(" + pattern + ")";
@@ -41,11 +44,17 @@ public static class RegIn
     public static string Star(this string source, string pattern)
         => Grouping(source, pattern).Star();
 
+    public static string NonGreedyStar(this string source, string pattern)
+        => Star(source, pattern).Optional();
+
     private static string Many(this string source)
         => source + "+";
 
     public static string Many(this string source, string pattern)
         => Grouping(source, pattern).Many();
+
+    public static string NonGreedyMany(this string source, string pattern)
+        => Many(source, pattern).Optional();
 
     private static string Range(this string source, uint min, uint? max = null)
     {
@@ -56,6 +65,9 @@ public static class RegIn
     
     public static string Range(this string source, string pattern, uint min, uint? max = null)
         => Grouping(source, pattern).Range(min, max);
+
+    public static string NonGreedyRange(this string source, string pattern, uint min, uint? max = null)
+        => Range(source, pattern, min, max).Optional();
     
     private static string Repeat(this string source, uint count)
         => source + "{" + count + "}";
