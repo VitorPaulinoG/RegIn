@@ -103,4 +103,7 @@ public static class RegIn
         string result = firstPattern + "|" + secondPattern;
         return Grouping(source, result);
     }
+
+    public static string BackReference(this string source, byte reference)
+        => source + $@"\{reference}";
 }
