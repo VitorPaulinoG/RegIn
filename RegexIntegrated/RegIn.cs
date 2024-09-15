@@ -29,7 +29,7 @@ public static class RegIn
     public static string Optional(this string source, string optionalPattern)
         => Grouping(source, optionalPattern).Optional();
 
-    private static string Grouping(this string source, string pattern)
+    public static string Grouping(this string source, string pattern)
     {
         string result = "(" + pattern + ")";
         
