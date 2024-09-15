@@ -96,5 +96,5 @@ public static class RegIn
         => source.Escape() + character.ToString();
 
     public static string ExactPhrase(this string source, string phrase)
-        => Regex.Escape(phrase);
+        => source + Regex.Escape(phrase);
 }
